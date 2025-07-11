@@ -1,52 +1,87 @@
-# Astro Starter Kit: Basics
+# 静的サイトボイラープレート
 
-```sh
-npm create astro@latest -- --template basics
-```
+Astro + React + TailwindCSS + Cloudflare Workers を使用した静的サイト開発のためのボイラープレートです。
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🛠️ 技術スタック
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **フレームワーク**: Astro 5.11.0
+- **UI ライブラリ**: React 19.1.0
+- **CSS フレームワーク**: TailwindCSS 4.1.11
+- **デプロイ**: Cloudflare Workers
+- **TypeScript**: 完全対応
+- **開発ツール**: Prettier, Wrangler
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## 🏗️ 特徴
 
-## 🚀 Project Structure
+- 静的サイト生成（SSG）に最適化
+- React コンポーネントの使用が可能
+- TailwindCSS による高速なスタイリング
+- Cloudflare Workers へのデプロイ対応
+- TypeScript 完全サポート
+- 日本語対応（lang="ja"）
 
-Inside of your Astro project, you'll see the following folders and files:
+## 📁 プロジェクト構造
 
 ```text
 /
-├── public/
+├── public/                  # 静的ファイル
 │   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
+├── src/                     # ソースファイル
+│   ├── assets/              # アセット（画像など）
+│   │   ├── astro.svg
+│   │   └── background.svg
+│   ├── components/          # Astro コンポーネント
+│   │   └── Welcome.astro
+│   ├── layouts/             # レイアウトコンポーネント
+│   │   └── Layout.astro
+│   ├── pages/               # ページファイル
+│   │   └── index.astro
+│   └── global.css           # グローバル CSS
+├── astro.config.mjs         # Astro 設定
+├── tsconfig.json           # TypeScript 設定
+├── wrangler.jsonc          # Cloudflare Workers 設定
+├── worker-configuration.d.ts # Workers 型定義
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🧞 コマンド
 
-## 🧞 Commands
+すべてのコマンドは、プロジェクトのルートディレクトリから実行してください：
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
+| コマンド                   | 説明                                           |
 | :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| `npm install`             | 依存関係をインストール                            |
+| `npm run dev`             | 開発サーバーを起動（`localhost:4321`）      |
+| `npm run build`           | 本番用サイトを `./dist/` にビルド          |
+| `npm run preview`         | ビルドしたサイトをローカルでプレビュー     |
+| `npm run astro ...`       | Astro CLI コマンドを実行 |
+| `npm run cf-typegen`      | Cloudflare Workers の型定義を生成                     |
 
-## 👀 Want to learn more?
+## 🚀 使用方法
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### 1. 依存関係のインストール
+```bash
+npm install
+```
+
+### 2. 開発サーバーの起動
+```bash
+npm run dev
+```
+
+### 3. 本番用ビルド
+```bash
+npm run build
+```
+
+### 4. Cloudflare Workers へのデプロイ
+```bash
+npm run build
+wrangler deploy
+```
+
+## 📚 参考リンク
+
+- [Astro Documentation](https://docs.astro.build)
+- [TailwindCSS Documentation](https://tailwindcss.com/docs)
+- [Cloudflare Workers Documentation](https://developers.cloudflare.com/workers/)

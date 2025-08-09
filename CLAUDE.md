@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a static site boilerplate built with Astro 5.11.0, React 19.1.0, and TailwindCSS 4.1.11, configured for deployment to Cloudflare Workers. The project uses TypeScript throughout and includes Prettier for code formatting.
+This is a static site boilerplate built with Astro 5.12.9, React 19.1.1, and TailwindCSS 4.1.11, configured for deployment to Cloudflare Workers. The project uses TypeScript throughout and includes Prettier for code formatting.
 
 ## Architecture
 
@@ -34,12 +34,13 @@ This is a static site boilerplate built with Astro 5.11.0, React 19.1.0, and Tai
 ```bash
 npm run dev          # Start development server on localhost:4321
 npm run build        # Build for production to ./dist/
-npm run preview      # Preview built site locally
+npm run preview      # Preview built site locally with Wrangler dev server
 ```
 
 ### Cloudflare Workers
 ```bash
 npm run cf-typegen   # Generate TypeScript types for Cloudflare Workers
+npm run deploy       # Deploy to Cloudflare Workers with minification (after build)
 wrangler deploy      # Deploy to Cloudflare Workers (after build)
 ```
 
@@ -74,3 +75,9 @@ npx prettier --write .  # Format code with Prettier
 - Prettier configured with plugins for Astro and TailwindCSS
 - Single quotes preferred, Astro-specific parser for `.astro` files
 - TailwindCSS classes automatically sorted via prettier-plugin-tailwindcss
+- Prettier references `./src/global.css` for TailwindCSS stylesheet
+
+### Workers Integration
+- `src/index.ts` provides fallback fetch handler for unmatched routes
+- Returns JSON response with caching headers for API endpoints
+- Wrangler configured with observability enabled and `./dist` as assets directory

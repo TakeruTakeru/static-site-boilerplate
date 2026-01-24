@@ -50,7 +50,7 @@ Astro + React + TailwindCSS + Cloudflare Workers を使用した静的サイト�
 
 | コマンド                   | 説明                                           |
 | :------------------------ | :----------------------------------------------- |
-| `npm install`             | 依存関係をインストール                            |
+| `npm run init`            | プロジェクトを初期化（名前・Cloudflare設定）      |
 | `npm run dev`             | 開発サーバーを起動（`localhost:4321`）      |
 | `npm run build`           | 本番用サイトを `./dist/` にビルド          |
 | `npm run preview`         | ビルドしたサイトをローカルでプレビュー     |
@@ -59,10 +59,11 @@ Astro + React + TailwindCSS + Cloudflare Workers を使用した静的サイト�
 
 ## 🚀 使用方法
 
-### 1. 依存関係のインストール
+### 1. プロジェクトの初期化
 ```bash
-npm install
+npm run init
 ```
+対話形式でプロジェクト名とCloudflareアカウントIDを設定し、依存関係をインストールします。
 
 ### 2. 開発サーバーの起動
 ```bash
@@ -77,7 +78,7 @@ npm run build
 ### 4. Cloudflare Workers へのデプロイ
 ```bash
 npm run build
-wrangler deploy
+npm run deploy
 ```
 
 ## 📚 参考リンク

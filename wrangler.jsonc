@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "name-of-this-project",
+  "name": "test-project",
   "compatibility_date": "2025-08-09",
   "main": "src/index.ts",
   "assets": {

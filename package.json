@@ -1,8 +1,9 @@
 {
-  "name": "name-of-this-project",
+  "name": "test-project",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "init": "node --experimental-strip-types bin/init.ts",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "wrangler dev",
@@ -10,22 +11,24 @@
     "cf-typegen": "wrangler types"
   },
   "dependencies": {
-    "@astrojs/react": "^4.3.0",
-    "@astrojs/sitemap": "^3.4.2",
-    "@tailwindcss/vite": "^4.1.11",
-    "@types/react": "^19.1.9",
-    "@types/react-dom": "^19.1.7",
-    "astro": "^5.12.9",
+    "prompts": "^2.4.2",
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/sitemap": "^3.7.0",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/react": "^19.2.9",
+    "@types/react-dom": "^19.2.3",
+    "astro": "^5.16.15",
     "clsx": "^2.1.1",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "tailwindcss": "^4.1.11"
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20250711.0",
-    "prettier": "^3.6.2",
+    "@types/prompts": "^2.4.9",
+    "@cloudflare/workers-types": "^4.20260124.0",
+    "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.14",
-    "wrangler": "^4.28.1"
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "wrangler": "^4.60.0"
   }
 }
